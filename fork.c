@@ -12,7 +12,7 @@ int main (){
 	printf("parent : %d my pid : %d\n",pid,getpid());
 	}
 
-	if(pid == 0){ //child does not know its own pid value.
+	if(pid == 0){ //child does not know own pid value.
 	//child process
 	printf("child: %d my pid : %d\n",pid,getpid());
 	}

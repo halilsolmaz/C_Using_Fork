@@ -4,17 +4,19 @@
 int main (){
 
 	int pid;
-	pid = fork();
+	pid = fork(); // pid of the created child. 
 
-	if(pid > 0){
-	//parent
-	wait(NULL); // parent, bütün childların işlerini bitirmesini bekler. 
-	printf("parent : %d benim pid : %d\n",pid,getpid());
+	if(pid > 0){ // Parent knows the child pid value
+	//parent process
+	wait(NULL); // Parent waits for all child processes to finish. 
+	printf("parent : %d my pid : %d\n",pid,getpid());
 	}
-	if(pid == 0){
-	//child
-	printf("child: %d benim pid : %d\n",pid,getpid());
+
+	if(pid == 0){ //child does not know its own pid value.
+	//child process
+	printf("child: %d my pid : %d\n",pid,getpid());
 	}
+
 	if(pid < 0){
 	//error
 	}
